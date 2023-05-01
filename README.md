@@ -55,8 +55,10 @@ Este manual describe los pasos necesarios para cualquier persona que tenga ciert
 
 ## Switch to another file
 
-![Crono](Este equipo/Descarga/.jpg)
-![enter image description here](https://drive.google.com/file/d/1jZ_0uc93L8XWRb7BdmBpir1fyeFAqeBn/view?usp=sharing)
+## Switch to another file
+
+![Tokens](Crono.jpg)
+ing)
 
  
 
