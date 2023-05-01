@@ -1,0 +1,579 @@
+def crear_bd(self):
+tokenA = self.obtener_token()
+##llave apertur inicial
+if tokenA.nombre == "CREAR_BD":
+    
+    self.sacar_token()
+    tokenA=self.obtener_token()
+   
+    if tokenA.nombre == "IDENTIFICADOR":
+
+        self.sacar_token()
+        tokenA=self.obtener_token()
+        if tokenA.nombre == "TOKEN_IGUAL":
+            self.sacar_token()
+            tokenA=self.obtener_token()
+            if tokenA.nombre == "TK_NUEVA":
+                self.sacar_token()
+                tokenA=self.obtener_token()
+                if tokenA.nombre == "CREAR_BD":
+                    self.sacar_token()
+                    
+                    tokenA=self.obtener_token()
+                    if tokenA.nombre == "TOKEN_PARENTESISABRE":
+                        self.sacar_token()
+                        tokenA=self.obtener_token()
+                        if tokenA.nombre == "TK_CADENA":
+                            self.identificador = tokenA.lexema
+
+                            self.sacar_token()
+                            tokenA=self.obtener_token()
+                            if tokenA.nombre == "TOKEN_PARENTESISCIERRA":
+                                self.sacar_token()
+                                tokenA=self.obtener_token()
+                                if tokenA.nombre == "TOKEN_PUNTOCOMA":
+                                    self.sacar_token()
+
+                                    f_use= funciones.Use(self.identificador)
+                                    use1=f_use.crear_use()
+                                    self.funciones.append(use1)
+                                    self.identificador= ""
+                                    print(use1)
+
+def eliminarbd(self):
+token_actual = self.obtener_token()
+##llave apertur inicial
+if token_actual.nombre == "ELIMINAR_BD":
+    
+    self.sacar_token()
+    token_actual=self.obtener_token()
+   
+    if token_actual.nombre == "IDENTIFICADOR":
+
+        self.sacar_token()
+        token_actual=self.obtener_token()
+        if token_actual.nombre == "TOKEN_IGUAL":
+            self.sacar_token()
+            token_actual=self.obtener_token()
+            if token_actual.nombre == "TK_NUEVA":
+                self.sacar_token()
+                token_actual=self.obtener_token()
+                if token_actual.nombre == "ELIMINAR_BD":
+                    self.sacar_token()
+                    
+                    token_actual=self.obtener_token()
+                    if token_actual.nombre == "TOKEN_PARENTESISABRE":
+                        
+                        self.sacar_token()
+                        token_actual=self.obtener_token()
+                        
+                        if token_actual.nombre == "TOKEN_PARENTESISCIERRA":
+                            self.sacar_token()
+                            token_actual=self.obtener_token()
+                            
+                            if token_actual.nombre == "TOKEN_PUNTOCOMA":
+                                self.sacar_token()
+                                f_drop= funciones.DropData()
+                                drop1=f_drop.crear_dropData()
+                                self.funciones.append(drop1)
+                                self.identificador= ""
+                                print(drop1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def crear_coleccion(self):
+token_actual = self.obtener_token()
+##llave apertur inicial
+if token_actual.nombre == "CREAR_COLECCION":
+    
+    self.sacar_token()
+    token_actual=self.obtener_token()
+   
+    if token_actual.nombre == "IDENTIFICADOR":
+
+        self.sacar_token()
+        token_actual=self.obtener_token()
+        if token_actual.nombre == "TOKEN_IGUAL":
+            self.sacar_token()
+            token_actual=self.obtener_token()
+            if token_actual.nombre == "TK_NUEVA":
+                self.sacar_token()
+                token_actual=self.obtener_token()
+                if token_actual.nombre == "CREAR_COLECCION":
+                    self.sacar_token()
+                    
+                    token_actual=self.obtener_token()
+                    if token_actual.nombre == "TOKEN_PARENTESISABRE":
+                        self.sacar_token()
+                        token_actual=self.obtener_token()
+                        if token_actual.nombre == "TK_CADENA":
+                            self.identificador = token_actual.lexema
+
+                            self.sacar_token()
+                            token_actual=self.obtener_token()
+                            if token_actual.nombre == "TOKEN_PARENTESISCIERRA":
+                                self.sacar_token()
+                                token_actual=self.obtener_token()
+                                if token_actual.nombre == "TOKEN_PUNTOCOMA":
+                                    self.sacar_token()
+
+                                    f_coleccion= funciones.Create_collection(self.identificador)
+                                    col1=f_coleccion.crear_coleccion()
+                                    self.funciones.append(col1)
+                                    self.identificador= ""
+                                   # print(col1)    
+                                    
+def eliminar_coleccion(self):
+token_actual = self.obtener_token()
+##llave apertur inicial
+if token_actual.nombre == "ELIMINAR_COLECCION":
+    
+    self.sacar_token()
+    token_actual=self.obtener_token()
+   
+    if token_actual.nombre == "IDENTIFICADOR":
+
+        self.sacar_token()
+        token_actual=self.obtener_token()
+        if token_actual.nombre == "TOKEN_IGUAL":
+            self.sacar_token()
+            token_actual=self.obtener_token()
+            if token_actual.nombre == "TK_NUEVA":
+                self.sacar_token()
+                token_actual=self.obtener_token()
+                if token_actual.nombre == "ELIMINAR_COLECCION":
+                    self.sacar_token()
+                    
+                    token_actual=self.obtener_token()
+                    if token_actual.nombre == "TOKEN_PARENTESISABRE":
+                        self.sacar_token()
+                        token_actual=self.obtener_token()
+                        if token_actual.nombre == "TK_CADENA":
+                            self.identificador = token_actual.lexema
+
+                            self.sacar_token()
+                            token_actual=self.obtener_token()
+                            if token_actual.nombre == "TOKEN_PARENTESISCIERRA":
+                                self.sacar_token()
+                                token_actual=self.obtener_token()
+                                if token_actual.nombre == "TOKEN_PUNTOCOMA":
+                                    self.sacar_token()
+
+                                    f_coleccion= funciones.DropCollection(self.identificador)
+                                    col1=f_coleccion.crear_dropCo()
+                                    self.funciones.append(col1)
+                                    self.identificador= ""
+                                    #print(col1)                                            
+
+def buscar_todo(self):
+token_actual = self.obtener_token()
+##llave apertur inicial
+if token_actual.nombre == "TK_BUSCAR_TODO":
+    
+    self.sacar_token()
+    token_actual=self.obtener_token()
+   
+    if token_actual.nombre == "IDENTIFICADOR":
+
+        self.sacar_token()
+        token_actual=self.obtener_token()
+        if token_actual.nombre == "TOKEN_IGUAL":
+            self.sacar_token()
+            token_actual=self.obtener_token()
+            if token_actual.nombre == "TK_NUEVA":
+                self.sacar_token()
+                token_actual=self.obtener_token()
+                if token_actual.nombre == "TK_BUSCAR_TODO":
+                    self.sacar_token()
+                    
+                    token_actual=self.obtener_token()
+                    if token_actual.nombre == "TOKEN_PARENTESISABRE":
+                        self.sacar_token()
+                        token_actual=self.obtener_token()
+                        if token_actual.nombre == "TK_CADENA":
+                            self.identificador = token_actual.lexema
+
+                            self.sacar_token()
+                            token_actual=self.obtener_token()
+                            if token_actual.nombre == "TOKEN_PARENTESISCIERRA":
+                                self.sacar_token()
+                                token_actual=self.obtener_token()
+                                if token_actual.nombre == "TOKEN_PUNTOCOMA":
+                                    self.sacar_token()
+
+                                    f_coleccion= funciones.Find(self.identificador)
+                                    col1=f_coleccion.crear_find()
+                                    self.funciones.append(col1)
+                                    self.identificador= ""
+                                    #print(col1)                                            
+
+
+def buscar_uno(self):
+token_actual = self.obtener_token()
+##llave apertur inicial
+if token_actual.nombre == "TK_BUSCAR_UNICO":
+    
+    self.sacar_token()
+    token_actual=self.obtener_token()
+   
+    if token_actual.nombre == "IDENTIFICADOR":
+
+        self.sacar_token()
+        token_actual=self.obtener_token()
+        if token_actual.nombre == "TOKEN_IGUAL":
+            self.sacar_token()
+            token_actual=self.obtener_token()
+            if token_actual.nombre == "TK_NUEVA":
+                self.sacar_token()
+                token_actual=self.obtener_token()
+                if token_actual.nombre == "TK_BUSCAR_UNICO":
+                    self.sacar_token()
+                    
+                    token_actual=self.obtener_token()
+                    if token_actual.nombre == "TOKEN_PARENTESISABRE":
+                        self.sacar_token()
+                        token_actual=self.obtener_token()
+                        if token_actual.nombre == "TK_CADENA":
+                            self.identificador = token_actual.lexema
+
+                            self.sacar_token()
+                            token_actual=self.obtener_token()
+                            if token_actual.nombre == "TOKEN_PARENTESISCIERRA":
+                                self.sacar_token()
+                                token_actual=self.obtener_token()
+                                if token_actual.nombre == "TOKEN_PUNTOCOMA":
+                                    self.sacar_token()
+
+                                    f_coleccion= funciones.Find_one(self.identificador)
+                                    col1=f_coleccion.crear_findOne()
+                                    self.funciones.append(col1)
+                                    self.identificador= ""
+                                    #print(col1)                                            
+
+#revisar el json 
+def insertar_uno(self):
+string_json=""
+token_actual = self.obtener_token()
+##llave apertur inicial
+if token_actual.nombre == "INSERTAR_UNICO":
+    
+    self.sacar_token()
+    token_actual=self.obtener_token()
+   
+    if token_actual.nombre == "IDENTIFICADOR":
+
+        self.sacar_token()
+        token_actual=self.obtener_token()
+        if token_actual.nombre == "TOKEN_IGUAL":
+            self.sacar_token()
+            token_actual=self.obtener_token()
+            if token_actual.nombre == "TK_NUEVA":
+                self.sacar_token()
+                token_actual=self.obtener_token()
+                if token_actual.nombre == "INSERTAR_UNICO":
+                    self.sacar_token()
+                    
+                    token_actual=self.obtener_token()
+                    if token_actual.nombre == "TOKEN_PARENTESISABRE":
+                        self.sacar_token()
+                        token_actual=self.obtener_token()
+                        if token_actual.nombre == "TK_CADENA":
+                            self.identificador = token_actual.lexema
+
+                            self.sacar_token()
+                            token_actual=self.obtener_token()
+                            
+                            
+                            if token_actual.nombre == "TOKEN_COMA":
+                                self.sacar_token()
+                                token_actual=self.obtener_token()
+                                
+                                if token_actual.nombre == "TOKEN_LLAVEABRE":
+                                    self.sacar_token()
+                                    token_actual=self.obtener_token()
+                                    string_json += "{\n"
+                                    
+                        
+                                    if token_actual.nombre == "TOKEN_LLAVEABRE":
+                                        string_json += self.json()
+
+                                        token_actual = self.obtener_token()
+                                        if token_actual.nombre == "TOKEN_LLAVECIERRA":
+                                            string_json += "\n}"
+                                            self.sacar_token()
+                                            
+                                            token_actual = self.obtener_token()
+                                            if token_actual.nombre == "TOKEN_PARENTESISCIERRA":
+                                                self.sacar_token()
+                                                token_actual=self.obtener_token()
+                                                if token_actual.nombre == "TOKEN_PUNTOCOMA":
+                                                    self.sacar_token()
+                                                    f_coleccion= funciones.InsertOne(self.identificador,string_json)
+                                                    col1=f_coleccion.crear_insert()
+                                                    self.funciones.append(col1)
+                                                    self.identificador= ""
+                                                    #print(string_
+                                                                                                                                                        
+def actualizar_unico(self):
+string_json=""
+token_actual = self.obtener_token()
+##llave apertur inicial
+if token_actual.nombre == "TK_ACTUALIZAR_UNICO":
+    
+    self.sacar_token()
+    token_actual=self.obtener_token()
+   
+    if token_actual.nombre == "IDENTIFICADOR":
+
+        self.sacar_token()
+        token_actual=self.obtener_token()
+        if token_actual.nombre == "TOKEN_IGUAL":
+            self.sacar_token()
+            token_actual=self.obtener_token()
+            if token_actual.nombre == "TK_NUEVA":
+                self.sacar_token()
+                token_actual=self.obtener_token()
+                if token_actual.nombre == "TK_ACTUALIZAR_UNICO":
+                    self.sacar_token()
+                    
+                    token_actual=self.obtener_token()
+                    if token_actual.nombre == "TOKEN_PARENTESISABRE":
+                        self.sacar_token()
+                        token_actual=self.obtener_token()
+                        if token_actual.nombre == "TK_CADENA":
+                            self.identificador = token_actual.lexema
+
+                            self.sacar_token()
+                            token_actual=self.obtener_token()
+                            
+                            
+                            if token_actual.nombre == "TOKEN_COMA":
+                                self.sacar_token()
+                                token_actual=self.obtener_token()
+                                
+                                if token_actual.nombre == "TOKEN_LLAVEABRE":
+                                    self.sacar_token()
+                                    token_actual=self.obtener_token()
+                                    string_json += "{\n"
+                                    
+                        
+                                    if token_actual.nombre == "TOKEN_LLAVEABRE":
+                                        string_json += self.json2()
+                                    
+                                        token_actual = self.obtener_token()
+                                        if token_actual.nombre == "TOKEN_COMA":
+                                            # viene un json con set
+                                            self.sacar_token()
+                                            string_json += " ,\n" + self.json_set()
+                                            token_actual = self.obtener_token()
+                                            if token_actual.nombre == "TOKEN_LLAVECIERRA":
+                                                self.sacar_token()
+                                                string_json += "    \n}"
+                                        elif token_actual.nombre == "TOKEN_LLAVECIERRA":
+                                            self.sacar_token()
+                                            string_json += "\n}"
+                                        
+                                        print(string_json)
+                                        token_actual = self.obtener_token()
+                                        if token_actual.nombre == "TOKEN_PARENTESISCIERRA":
+                                            self.sacar_token()
+                                            token_actual=self.obtener_token()
+                                            if token_actual.nombre == "TOKEN_PUNTOCOMA":
+                                                f_coleccion= funciones.ActualizaOne(self.identificador,string_json)
+                                                col1=f_coleccion.crear_actu1()
+                                                self.funciones.append(col1)
+                                                self.identificador= ""
+                                        
+    
+#     
+def atributos_set(self):
+clave = ""
+lexema = ""
+texto = ""
+
+token_actual = self.obtener_token()
+if token_actual.nombre == "TK_SET":
+    clave = token_actual.lexema
+    self.sacar_token()
+
+    token_actual = self.obtener_token()
+    if token_actual.nombre == "TOKEN_DOSPUNTOS":
+        self.sacar_token()
+        
+        token_actual = self.obtener_token()
+        
+        if token_actual.nombre == "TOKEN_LLAVEABRE":
+            lexema = self.json2()
+            token_actual = self.obtener_token()
+            texto = clave + ":" + lexema
+            if token_actual.nombre == "TOKEN_LLAVECIERRA":
+                return texto
+            
+            
+        
+                                                         
+def json(self):
+texto = ""
+self.sacar_token()
+texto += "  {\n"
+
+token_actual = self.obtener_token()
+if token_actual.nombre == "TK_CADENA":
+    texto += self.atributos()
+
+    token_actual = self.obtener_token()
+    if token_actual.nombre == "TOKEN_LLAVECIERRA":
+        self.sacar_token()
+
+        texto += "  \n}"
+
+        token_actual = self.obtener_token()
+        if token_actual.nombre == "TOKEN_LLAVECIERRA":
+            return texto
+
+def json2(self):
+texto = ""
+self.sacar_token()
+texto += "  {\n"
+
+token_actual = self.obtener_token()
+if token_actual.nombre == "TK_CADENA":
+    texto += self.atributos()
+
+    token_actual = self.obtener_token()
+    if token_actual.nombre == "TOKEN_LLAVECIERRA":
+        self.sacar_token()
+
+        texto += "  \n}"
+        return texto 
+
+def json_set(self):
+texto = ""
+self.sacar_token()
+texto += "  {\n"
+
+token_actual = self.obtener_token()
+if token_actual.nombre == "TK_SET":
+    texto += self.atributos_set()
+
+    token_actual = self.obtener_token()
+    if token_actual.nombre == "TOKEN_LLAVECIERRA":
+        self.sacar_token()
+
+        texto += "  \n}"
+        return texto                     
+                                                                            
+def atributos(self):
+clave = ""
+lexema = ""
+texto = ""
+
+token_actual = self.obtener_token()
+if token_actual.nombre == "TK_CADENA":
+    clave = token_actual.lexema
+    self.sacar_token()
+
+    token_actual = self.obtener_token()
+    if token_actual.nombre == "TOKEN_DOSPUNTOS":
+        self.sacar_token()
+        
+        token_actual = self.obtener_token()
+        # este if valida el tipo de token que se espera para el lexema
+        if token_actual.nombre == "TK_CADENA":
+            lexema = token_actual.lexema
+            self.sacar_token()
+
+            texto = clave + ":" + lexema
+            token_actual = self.obtener_token()
+            # puede venir coma o llave de cierre
+            if token_actual.nombre == "TOKEN_COMA":
+                self.sacar_token()
+                texto += ",\n"
+                texto += self.atributos()
+                return texto
+            elif token_actual.nombre == "TOKEN_LLAVECIERRA":
+                return texto
+
+                                
+                                                                            
+def eliminar_unico(self):  
+string_json=""
+token_actual = self.obtener_token()
+##llave apertur inicial
+if token_actual.nombre == "TK_ELIMINAR_UNICO":
+    
+    self.sacar_token()
+    token_actual=self.obtener_token()
+   
+    if token_actual.nombre == "IDENTIFICADOR":
+
+        self.sacar_token()
+        token_actual=self.obtener_token()
+        if token_actual.nombre == "TOKEN_IGUAL":
+            self.sacar_token()
+            token_actual=self.obtener_token()
+            if token_actual.nombre == "TK_NUEVA":
+                self.sacar_token()
+                token_actual=self.obtener_token()
+                if token_actual.nombre == "EliminarUnico":
+                    self.sacar_token()
+                    
+                    token_actual=self.obtener_token()
+                    if token_actual.nombre == "TOKEN_PARENTESISABRE":
+                        self.sacar_token()
+                        token_actual=self.obtener_token()
+                        if token_actual.nombre == "TK_CADENA":
+                            self.identificador = token_actual.lexema
+
+                            self.sacar_token()
+                            token_actual=self.obtener_token()
+                            
+                            
+                            if token_actual.nombre == "TOKEN_COMA":
+                                self.sacar_token()
+                                token_actual=self.obtener_token()
+                                
+                                if token_actual.nombre == "TOKEN_LLAVEABRE":
+                                    self.sacar_token()
+                                    token_actual=self.obtener_token()
+                                    string_json += "{\n"
+                                    
+                        
+                                    if token_actual.nombre == "TOKEN_LLAVEABRE":
+                                        string_json += self.json()
+
+                                        token_actual = self.obtener_token()
+                                        if token_actual.nombre == "TOKEN_LLAVECIERRA":
+                                            string_json += "\n}"
+                                            self.sacar_token()
+                                            
+                                            token_actual = self.obtener_token()
+                                            if token_actual.nombre == "TOKEN_PARENTESISCIERRA":
+                                                self.sacar_token()
+                                                token_actual=self.obtener_token()
+                                                if token_actual.nombre == "TOKEN_PUNTOCOMA":
+                                                  
+                                                  
+                                                    f_coleccion= funciones.DeleteOne(self.identificador,string_json)
+                                                    col1=f_coleccion.crear_delete_one()
+                                                    self.funciones.append(col1)
+                                                    self.identificador= ""     
+                                                                    
+                                                                
