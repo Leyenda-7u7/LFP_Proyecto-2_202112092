@@ -86,23 +86,43 @@ Cada comando está definido como un método dentro de la clase cada una con su f
 Esto genera la siguiente gramatica.
 
 Palabras Reservadas:
-*CrearBD
-EliminarBD
-CrearColeccion
-EliminarColeccion
-InsertarUnico
-ActualizarUnico
-BuscarTodo
-BuscarUnico
-(
-)
-*;*
-=*
-*ID -> [a-z_A-Z_] [a-z_A-Z_0-9]**
-NUMERO -> [0-9]+
-STRING -> "[^"]"*
-IGNORE  -> /t/r
-COMENTARIOS -> //.*
 
-init: 		instrucciones 
-instrucciones: instruccion
+*CrearBD*
+
+*EliminarBD*
+
+*CrearColeccion*
+
+*EliminarColeccion*
+
+*InsertarUnico*
+
+*ActualizarUnico*
+
+*BuscarTodo*
+
+*BuscarUnico*
+
+*(*
+
+*)*
+
+*;*
+
+*=**
+
+*ID -> [a-z_A-Z_] [a-z_A-Z_0-9]**
+
+*NUMERO -> [0-9]+*
+
+*STRING -> "[^"]"**
+
+*IGNORE  -> /t/r*
+
+*COMENTARIOS -> //.**
+
+*init: 		instrucciones* 
+
+*instrucciones: instruccion	 instrucciones
+		| instruccion*
+
