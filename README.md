@@ -58,10 +58,9 @@ Este manual describe los pasos necesarios para cualquier persona que tenga ciert
 ## Switch to another file
 
 ![Tokens](Crono.jpg)
-ing)
+
 
  
-
 All your files and folders are presented as a tree in the file explorer. You can switch from one to another by clicking a file in the tree.
 
 #	Contenido tecnico
