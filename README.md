@@ -1,18 +1,11 @@
 
 UNIVESIDAD DE SAN CARLOS DE GUATEMALA
-
 FACULTAD DE INGENIERIA
-
 ESCUELA DE CIENCAS Y SISTEMAS
-
 LANGUAJES FORMALES Y DE PROGRAMACION
-
 SECCIÓN B+
-
 PRIMER SEMESTRE 2023
-
 AUX. DIEGO ANDRES OBIN ROSALES
-
 
 
 
@@ -21,9 +14,7 @@ AUX. DIEGO ANDRES OBIN ROSALES
 
 
 BRANDON EDUARDO PABLO GARCIA
-
 202112092
-
 Guatemala, febrero del 2023
 
 
@@ -49,19 +40,17 @@ Este manual describe los pasos necesarios para cualquier persona que tenga ciert
 
 |          Requerimientos      |     Descripcion |                                      
 |----------------|-------------------------------|
-|`Visual Studio Code`            |Se recomienda el uso de Visual Studio Code que fue la versión donde se programó el sistema de información. |       
+|Visual Studio Code            |Se recomienda el uso de Visual Studio Code que fue la versión donde se programó el sistema de información. |       
 |Tkinter         |Conocimiento sobre el uso de las librerias tkinter para el uso de la interfaz grafica |            |            |
 
 
-## Switch to another file
+##	Desarrollo
 
-## Switch to another file
-
-![Tokens](Crono.jpg)
-
+[![Crono.jpg](https://i.postimg.cc/0jqCq0fW/Crono.jpg)](https://postimg.cc/0McSYmhD)
 
  
-All your files and folders are presented as a tree in the file explorer. You can switch from one to another by clicking a file in the tree.
+
+
 
 #	Contenido tecnico
 
@@ -95,7 +84,7 @@ Cada comando está definido como un método dentro de la clase cada una con su f
 
 Esto genera la siguiente gramatica.
 
-Palabras Reservadas:
+*Palabras Reservadas:*
 
 *CrearBD*
 
@@ -133,6 +122,9 @@ Palabras Reservadas:
 
 *init: 		instrucciones* 
 
+*instrucciones: instruccion	 instrucciones
+										instruccion*
+
 instrucion: 
 *CrearBD*;
 
@@ -165,5 +157,35 @@ instrucion:
 *eliminarUnico : EliminarUnico ID = nueva EliminarUnico( STRING )*
 
 *buscarTodo : BuscarTodo ID = nueva BuscarTodo ( STRING )*
+
+*buscarUnico : BuscarUnico ID = nueva BuscarUnico ( STRING )*
+
+ # Interfaz
+Para realizar la interfaz fue necesario la implementacion de la libreria tkinter la cual nos ayudo a crear una interfaz mas agradable al usuario, donde de la misma manera se uso para llenar de funciones las cuales ayudaron a generar respuestas de toda la parte logica del proyecto y generar muchas mas aplicaciones. 
+
+La interfaz programada se presenta en la siguiente imagen, donde se encuentran tres botones los cuales uno es de analizar, Tokens y Errores, eso fue para implementar funciones a cada boton las cuales fueron las siguientes:
+
+Para el boton analizar:
+
+[![3004.png](https://i.postimg.cc/brT1fcdr/3004.png)](https://postimg.cc/30kk2qXQ)
+
+
+Para el boton Tokens:
+
+[![3004-1.png](https://i.postimg.cc/3J8gCRbv/3004-1.png)](https://postimg.cc/RqY6vMmS)
+
+Para le boton Errores:
+[![3004-1.png](https://i.postimg.cc/3J8gCRbv/3004-1.png)](https://postimg.cc/RqY6vMmS)
+
+
+
+La interfaz quedaria de la siguiente manera donde podemos ver mas opciones en la parte de arriba.
+
+[![Captura-de-pantalla-2023-04-30-195736.png](https://i.postimg.cc/6q9G0jzX/Captura-de-pantalla-2023-04-30-195736.png)](https://postimg.cc/ygbd6TwQ)
+
+En la parte superior se encuentra mas opciones las cuales utlizaremos como lo serian abrir los documentos, entre otros.
+[![Captura-de-pantalla-2023-04-30-203324.png](https://i.postimg.cc/0jY18Zqb/Captura-de-pantalla-2023-04-30-203324.png)](https://postimg.cc/bSwBgxrh)
+
+[![Captura-de-pantalla-2023-04-30-203402.png](https://i.postimg.cc/654GhvfT/Captura-de-pantalla-2023-04-30-203402.png)](https://postimg.cc/QHst8VPr)
 
 
