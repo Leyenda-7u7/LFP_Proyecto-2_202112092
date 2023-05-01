@@ -132,6 +132,37 @@ Palabras Reservadas:
 
 *init: 		instrucciones* 
 
-*instrucciones: instruccion	 instrucciones
-		| instruccion*
+instrucion: 
+*CrearBD*;
+
+*EliminarBD*;
+
+*CrearColeccion*;
+
+*EliminarColeccion*;
+
+*InsertarUnico*;
+
+*ActualizarUnico*;
+
+*BuscarTodo*;
+
+*BuscarUnico*;
+
+*crearBD : CrearBD ID = nueva CrearBD ()*
+
+*elimnarBD : EliminarBD ID = nueva EliminarBD ()*
+
+*crearColeccion : CrearColeccion  ID = nueva CrearColeccion( STRING )*
+
+*eliminarColeccion : EliminarColeccion  ID  = nueva EliminarColeccion( STRING )*
+
+*insertarUnico : InsertarUnico ID = nueva InsertarUnico( STRING; STRING )*
+
+*actualizarUnico : ActualizarUnico ID = nueva ActualizarUnico( STRING, STRING )*
+
+*eliminarUnico : EliminarUnico ID = nueva EliminarUnico( STRING )*
+
+*buscarTodo : BuscarTodo ID = nueva BuscarTodo ( STRING )*
+
 
